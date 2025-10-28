@@ -73,13 +73,11 @@ const Cadastro = () => {
   try {
     if (!id) {
       // Cadastra novo usuário
-      const URL = "http://localhost:3001/users";
-      const resp = await axios.post(URL, novoUsuario);
+      const resp = await api.post('/users', novoUsuario);
       toast.success(`Usuário criado com sucesso! Novo ID: ${resp.data.id}`);
     } else {
       // Atualiza usuário existente
-      const URL = `http://localhost:3001/users/${id}`;
-      await axios.put(URL, novoUsuario);
+      await api.put(`/users/${id}`, novoUsuario);
       toast.success(`Usuário ${id} atualizado com sucesso!`);
     }
 
