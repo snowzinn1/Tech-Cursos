@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": "a3ca",
+      "nome": "Gustavo",
+      "sobrenome": "Bordinasso",
+      "email": "gustavob@gmail.com",
+      "senha": "123456"
+    }
+  ],
+  "courses": [
+    {
+      "id": "1",
+      "title": "Introdução a JavaScript",
+      "description": "Conceitos básicos de JavaScript, variáveis, funções e DOM.",
+      "level": "Iniciante",
+      "price": 0
+    },
+    {
+      "id": "2",
+      "title": "React do Zero",
+      "description": "Fundamentos do React: componentes, estado, props e hooks.",
+      "level": "Intermediário",
+      "price": 49.9
+    },
+    {
+      "id": "3",
+      "title": "Node.js e APIs REST",
+      "description": "Construção de APIs REST com Express e manipulação de banco de dados.",
+      "level": "Intermediário",
+      "price": 79.9
+    }
+  ]
+}
