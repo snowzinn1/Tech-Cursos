@@ -36,29 +36,32 @@ const handleSubmit = async (e) => {
   setSubmitting(true);
 
   try {
-    const res = await api.get('/users');
-    const users = res.data;
-
-    const usuarioEncontrado = users.find(
-      (u) => u.email === email && u.senha === senha
-    );
+    // Filtra direto no JSON Server
+    const res = await api.get('/users', { params: { email, senha } });
+    const usuarioEncontrado = res.data[0];
 
     if (usuarioEncontrado) {
       toast.success('Login bem-sucedido!');
-      console.log('Usuário logado:', usuarioEncontrado);
-
-      // ✅ Salva corretamente no localStorage
       localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
 
-      // Redireciona
-      navigate('/');
+      // 🚀 Redirecionamento inteligente
+      if (usuarioEncontrado.role === 'admin') {
+        navigate('/admin/dashboard');
+      } else {
+        navigate('/');
+      }
     } else {
       toast.error('E-mail ou senha incorretos!');
     }
+  } catch (err) {
+    console.error(err);
+    toast.error('Erro ao conectar com o servidor.');
   } finally {
     setSubmitting(false);
   }
 };
+
+
 
   
   return (

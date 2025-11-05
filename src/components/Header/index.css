@@ -78,3 +78,49 @@
 header img {
   height: 3.5em;
 }
+
+.menu-usuario {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: #eaeaea;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  min-width: 180px;
+  z-index: 100;
+  animation: fadeInMenu 0.3s ease forwards;
+}
+
+
+/* Botões internos */
+.menu-usuario button {
+  background: none;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #000;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-usuario button:hover {
+  color: #0b63f6;
+  transform: translateX(5px);
+}
+
+/* Animação suave */
+@keyframes fadeInMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

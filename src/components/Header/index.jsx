@@ -21,12 +21,24 @@ export default function Header() {
     navigate("/login");
   };
 
+  // 👇 Fecha o menu se o usuário clicar fora
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Se o clique NÃO for dentro do .usuario-menu, fecha o menu
+      if (!event.target.closest(".usuario-menu")) {
+        setMostrarLogout(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
+
   return (
     <header className="header">
-
       <div>
         <a href="/">
-          <img src={logo} alt="" />
+          <img src={logo} alt="Logo" />
         </a>
       </div>
 
@@ -35,16 +47,22 @@ export default function Header() {
         <Link to="/assinaturas">Assine</Link>
 
         {usuario ? (
-          <div
-            className="usuario-menu"
-            onMouseEnter={() => setMostrarLogout(true)}
-            onMouseLeave={() => setMostrarLogout(false)}
-          >
-            <span className="usuario-nome">Olá, {usuario.nome}</span>
+          <div className="usuario-menu">
+            <span
+              className="usuario-nome"
+              onClick={() => setMostrarLogout((prev) => !prev)}
+            >
+              Olá, {usuario.nome}
+            </span>
+
             {mostrarLogout && (
-              <button className="logout-btn" onClick={handleLogout}>
-                Sair
-              </button>
+              <div className="menu-usuario">
+                <button onClick={() => navigate("/perfil")}>Meu perfil</button>
+                <button onClick={() => navigate("/meus-cursos")}>
+                  Meus cursos
+                </button>
+                <button onClick={handleLogout}>Desconectar</button>
+              </div>
             )}
           </div>
         ) : (

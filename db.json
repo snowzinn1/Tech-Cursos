@@ -5,7 +5,16 @@
       "nome": "Gustavo",
       "sobrenome": "Bordinasso",
       "email": "gustavob@gmail.com",
-      "senha": "123456"
+      "senha": "123456",
+      "role": "user"
+    },
+    {
+      "id": "adm1",
+      "nome": "Administrador",
+      "sobrenome": "Do Sistema",
+      "email": "admin@senac.com",
+      "senha": "admin123",
+      "role": "admin"
     }
   ],
   "courses": [
