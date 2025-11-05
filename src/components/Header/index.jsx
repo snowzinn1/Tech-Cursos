@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
+import "./index.css";
 
 export default function Header() {
   const [usuario, setUsuario] = useState(null);
@@ -30,9 +31,8 @@ export default function Header() {
       </div>
 
       <nav>
-        <Link to="/cursos">Cursos</Link>
         <Link to="/sobre">Sobre</Link>
-        <Link to="/assine">Assine</Link>
+        <Link to="/assinaturas">Assine</Link>
 
         {usuario ? (
           <div

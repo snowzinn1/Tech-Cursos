@@ -4,6 +4,7 @@ import html5Img from '../../../assets/cursos/html5.png';
 import css3Img from '../../../assets/cursos/css3.png';
 import javascriptImg from '../../../assets/cursos/javascript.png';
 import reactImg from '../../../assets/cursos/react.png';
+import "./index.css";
 
 export default function ProgramacaoWeb() {
   const courses = [

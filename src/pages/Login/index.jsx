@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import "./index.css";
 import Header from "../../components/Header";
 import api from '../../api';
 import toast from 'react-hot-toast';
 import menina from '../../assets/menina.png';
+import Footer from '../../components/Footer';
+import "./index.css";
 
 export default function Login() {
 
@@ -91,6 +92,7 @@ const handleSubmit = async (e) => {
           </form>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import powerpointImg from '../../../assets/cursos/powerpoint.png';
 import excelImg from '../../../assets/cursos/excel.png';
 import powerbiImg from '../../../assets/cursos/powerbi.png';
 import wordImg from '../../../assets/cursos/word.png';
+import "./index.css";
 
 export default function Informatica() {
   const courses = [

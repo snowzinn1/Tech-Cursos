@@ -13,6 +13,8 @@ import ProgramacaoWeb from './pages/cursos/pw/index.jsx';
 import LinguagensProgramacao from './pages/cursos/lp/index.jsx';
 import BancoDeDados from './pages/cursos/bd/index.jsx';
 import Informatica from './pages/cursos/info/index.jsx';
+import Pagamento from './pages/Assinaturas/index.jsx';
+import Sobre from './pages/sobre/index.jsx';
 
 
 createRoot(document.getElementById('root')).render(
@@ -28,6 +30,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/linguagens-de-programacao" element={<LinguagensProgramacao />} />
         <Route path="/banco-de-dados" element={<BancoDeDados />} />
         <Route path="/informatica" element={<Informatica />} />
+        <Route path="/assinaturas" element={<Pagamento />} />
+        <Route path="/sobre" element={<Sobre />} />
     </Routes>
     </BrowserRouter>
   </StrictMode>,

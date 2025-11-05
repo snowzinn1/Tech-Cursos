@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import "./index.css";
 import menina from '../../assets/menina.png';
+import Footer from "../../components/Footer";
 
 
 const Cadastro = () => {
@@ -175,7 +176,9 @@ const Cadastro = () => {
           </form>
         </div>
       </div>
+      <Footer />
     </div>
+    
   );
 };
 

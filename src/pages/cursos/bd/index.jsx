@@ -4,6 +4,7 @@ import mysqlImg from '../../../assets/cursos/mysql.png';
 import oracleImg from '../../../assets/cursos/oracle.png';
 import postgreImg from '../../../assets/cursos/postgre.png';
 import mongodbImg from '../../../assets/cursos/mongodb.png';
+import "./index.css";
 
 export default function BancoDeDados() {
   const courses = [

@@ -1,0 +1,80 @@
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(5deg, #0b63f6, #0000BF);
+  color: white;
+  padding: 1rem 2.5rem;
+  position: fixed;
+  width: 100%;
+  height: 4em;
+}
+
+.header h2 { 
+  margin: 0; 
+  font-size: 1.4rem; 
+  letter-spacing: 0.4px; 
+}
+
+.header nav { 
+  display: flex; 
+  gap: 1rem; 
+  align-items: center; 
+}
+
+.header nav a {
+  color: white; 
+  text-decoration: none; 
+  font-weight: 500; 
+  opacity: 0.95;
+}
+
+.header h2 a { 
+  color: inherit; 
+  text-decoration: none; 
+}
+
+.login-btn {
+  background: #00b3b3;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.logout-btn {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  color: #0b63f6;
+  border: 1px solid #0b63f6;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.2s ease-in-out;
+}
+
+.logout-btn:hover {
+  background: #144fb6;
+  color: white;
+}
+
+.usuario-menu {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.usuario-nome {
+  font-weight: 600;
+}
+
+header img {
+  height: 3.5em;
+}

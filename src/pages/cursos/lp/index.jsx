@@ -4,6 +4,7 @@ import pythonImg from '../../../assets/cursos/python.png';
 import javaImg from '../../../assets/cursos/java.png';
 import csharpImg from '../../../assets/cursos/csharp.png';
 import rubyImg from '../../../assets/cursos/ruby.png';
+import "./index.css";
 
 export default function LinguagensProgramacao() {
   const courses = [

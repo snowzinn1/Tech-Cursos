@@ -1,3 +1,5 @@
+import "./index.css";
+
 export default function Advantages() {
   const vantagens = [
     "Certificado de conclusão",
