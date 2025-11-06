@@ -16,6 +16,7 @@ import Informatica from './pages/cursos/info/index.jsx';
 import Pagamento from './pages/Assinaturas/index.jsx';
 import Sobre from './pages/sobre/index.jsx';
 import CadastrarCurso from './components/CadastrarCurso/index.jsx';
+import Perfil from './pages/MeuPerfil/index.jsx';
 
 // 🆕 importa o painel e a proteção
 import DashboardAdmin from './pages/Admin/index.jsx';
@@ -37,6 +38,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/assinaturas" element={<Pagamento />} />
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/cadastrar-curso" element={<CadastrarCurso />} />
+        <Route path="/perfil" element={<Perfil />} />
 
         {/* 🆕 Rota protegida do admin */}
         <Route

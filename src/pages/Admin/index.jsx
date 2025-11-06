@@ -8,9 +8,6 @@ export default function DashboardAdmin() {
     <div>
       <HeaderAdmin />
       <main className="admin-dashboard">
-        <h1 style={{ textAlign: "center", margin: "2rem 0" }}>
-          Painel do Administrador
-        </h1>
         <CadastrarCurso />
       </main>
       <Footer />

@@ -130,7 +130,6 @@ export default function CadastrarCurso() {
 
      <br />
      <hr style={{ borderTop: "1px solid #e0e0e0" }} />
-
       <h2>Cursos Cadastrados</h2>
       <div className="lista-cursos">
         {cursos.length > 0 ? (

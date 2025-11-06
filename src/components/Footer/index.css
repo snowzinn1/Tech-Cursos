@@ -8,6 +8,7 @@
   border-top: 1px solid #e0e0e0;
   position: relative;
   left: 0;
+  bottom: 0; 
 }
 .footer-links { 
   margin: 0.6rem 0; 
