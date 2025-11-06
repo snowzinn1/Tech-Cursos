@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import api from "../../api";
 import toast from "react-hot-toast";
 import "./index.css";
+import HeaderAdmin from "../HeaderAdmin";
+import Footer from "../Footer";
 
 export default function CadastrarCurso() {
   const [curso, setCurso] = useState({
@@ -73,7 +75,9 @@ export default function CadastrarCurso() {
   };
 
   return (
+    <div id="body">
     <div className="cadastrar-curso-container">
+      <HeaderAdmin />
       <h2>Cadastrar Novo Curso</h2>
 
       <form className="cadastrar-curso-form" onSubmit={handleSubmit}>
@@ -124,7 +128,8 @@ export default function CadastrarCurso() {
         </button>
       </form>
 
-      <hr />
+     <br />
+     <hr style={{ borderTop: "1px solid #e0e0e0" }} />
 
       <h2>Cursos Cadastrados</h2>
       <div className="lista-cursos">
@@ -151,6 +156,7 @@ export default function CadastrarCurso() {
           <p>Nenhum curso cadastrado ainda.</p>
         )}
       </div>
+    </div>
     </div>
   );
 }
