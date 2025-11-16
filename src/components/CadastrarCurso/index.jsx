@@ -44,7 +44,6 @@ export default function CadastrarCurso() {
 
     if (
       !curso.title ||
-      !curso.description ||
       !curso.level ||
       !curso.img ||
       !curso.category
@@ -61,7 +60,6 @@ export default function CadastrarCurso() {
       setCurso({
         img: "",
         title: "",
-        description: "",
         level: "",
         duration: "",
         category: "",
@@ -106,14 +104,6 @@ export default function CadastrarCurso() {
             onChange={handleChange}
           />
 
-          <label htmlFor="description">Descrição</label>
-          <textarea
-            id="description"
-            name="description"
-            placeholder="Descreva o conteúdo do curso..."
-            value={curso.description}
-            onChange={handleChange}
-          ></textarea>
 
           <label htmlFor="img">Imagem (URL)</label>
           <input
@@ -158,7 +148,7 @@ export default function CadastrarCurso() {
             <option value="">Selecione a categoria</option>
             <option value="lp">Linguagens de Programação</option>
             <option value="bd">Banco de Dados</option>
-            <option value="web">Programação Web</option>
+            <option value="pw">Programação Web</option>
             <option value="info">Informática</option>
           </select>
 
@@ -179,13 +169,12 @@ export default function CadastrarCurso() {
               <div key={c.id} className="curso-item">
                 <div>
                   <h3>{c.title}</h3>
-                  <p>{c.description}</p>
+          
                   <span>
                     <strong>Nível:</strong> {c.level} |{" "}
-                    <strong>Duração:</strong> {c.duration}h
+                    <strong>Duração:</strong> {c.duration} |{" "}
+                    <strong>Categoria:</strong> {c.category?.toUpperCase()}
                   </span>
-                  <br />
-                  <strong>Categoria:</strong> {c.category?.toUpperCase()}
                 </div>
                 <button
                   className="btn-excluir"

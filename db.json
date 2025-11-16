@@ -88,7 +88,7 @@
       "title": "HTML5",
       "level": "Avançado",
       "duration": "60 horas",
-      "category": "Pw"
+      "category": "pw"
     },
     {
       "id": "10",
@@ -96,7 +96,7 @@
       "title": "CSS3",
       "level": "Básico",
       "duration": "50 horas",
-       "category": "Pw"
+       "category": "pw"
     },
     {
       "id": "11",
@@ -104,7 +104,7 @@
       "title": "JavaScript",
       "level": "Avançado",
       "duration": "90 horas",
-       "category": "Pw"
+       "category": "pw"
     },
     {
       "id": "12",
@@ -112,7 +112,7 @@
       "title": "React",
       "level": "Básico",
       "duration": "40 horas",
-       "category": "Pw"
+       "category": "pw"
     },
     {
       "id": "13",
