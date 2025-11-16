@@ -7,10 +7,12 @@ import Footer from "../Footer";
 
 export default function CadastrarCurso() {
   const [curso, setCurso] = useState({
+    img: "",
     title: "",
     description: "",
     level: "",
-    price: "",
+    duration: "",
+    category: "",
   });
 
   const [enviando, setEnviando] = useState(false);
@@ -40,7 +42,13 @@ export default function CadastrarCurso() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!curso.title || !curso.description || !curso.level || !curso.price) {
+    if (
+      !curso.title ||
+      !curso.description ||
+      !curso.level ||
+      !curso.img ||
+      !curso.category
+    ) {
       toast.error("Preencha todos os campos!");
       return;
     }
@@ -50,7 +58,14 @@ export default function CadastrarCurso() {
     try {
       await api.post("/courses", curso);
       toast.success("Curso cadastrado com sucesso!");
-      setCurso({ title: "", description: "", level: "", price: "" });
+      setCurso({
+        img: "",
+        title: "",
+        description: "",
+        level: "",
+        duration: "",
+        category: "",
+      });
       carregarCursos();
     } catch (err) {
       console.error(err);
@@ -76,86 +91,115 @@ export default function CadastrarCurso() {
 
   return (
     <div id="body">
-    <div className="cadastrar-curso-container">
-      <HeaderAdmin />
-      <h2>Cadastrar Novo Curso</h2>
+      <div className="cadastrar-curso-container">
+        <HeaderAdmin />
+        <h2>Cadastrar Novo Curso</h2>
 
-      <form className="cadastrar-curso-form" onSubmit={handleSubmit}>
-        <label htmlFor="title">Título</label>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          placeholder="Ex: Fundamentos de React"
-          value={curso.title}
-          onChange={handleChange}
-        />
+        <form className="cadastrar-curso-form" onSubmit={handleSubmit}>
+          <label htmlFor="title">Título</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Ex: Fundamentos de React"
+            value={curso.title}
+            onChange={handleChange}
+          />
 
-        <label htmlFor="description">Descrição</label>
-        <textarea
-          id="description"
-          name="description"
-          placeholder="Descreva o conteúdo do curso..."
-          value={curso.description}
-          onChange={handleChange}
-        ></textarea>
+          <label htmlFor="description">Descrição</label>
+          <textarea
+            id="description"
+            name="description"
+            placeholder="Descreva o conteúdo do curso..."
+            value={curso.description}
+            onChange={handleChange}
+          ></textarea>
 
-        <label htmlFor="level">Nível</label>
-        <select
-          id="level"
-          name="level"
-          value={curso.level}
-          onChange={handleChange}
-        >
-          <option value="">Selecione o nível</option>
-          <option value="Iniciante">Iniciante</option>
-          <option value="Intermediário">Intermediário</option>
-          <option value="Avançado">Avançado</option>
-        </select>
+          <label htmlFor="img">Imagem (URL)</label>
+          <input
+            type="text"
+            id="img"
+            name="img"
+            placeholder="https://exemplo.com/img-react.png"
+            value={curso.img}
+            onChange={handleChange}
+          />
 
-        <label htmlFor="price">Preço (R$)</label>
-        <input
-          type="number"
-          id="price"
-          name="price"
-          placeholder="Ex: 49.90"
-          value={curso.price}
-          onChange={handleChange}
-        />
+          <label htmlFor="level">Nível</label>
+          <select
+            id="level"
+            name="level"
+            value={curso.level}
+            onChange={handleChange}
+          >
+            <option value="">Selecione o nível</option>
+            <option value="Iniciante">Iniciante</option>
+            <option value="Intermediário">Intermediário</option>
+            <option value="Avançado">Avançado</option>
+          </select>
 
-        <button type="submit" disabled={enviando}>
-          {enviando ? "Cadastrando..." : "Cadastrar Curso"}
-        </button>
-      </form>
+          <label htmlFor="duration">Duração (Horas)</label>
+          <input
+            type="number"
+            id="duration"
+            name="duration"
+            placeholder="Ex: 40"
+            value={curso.duration}
+            onChange={handleChange}
+          />
 
-     <br />
-     <hr style={{ borderTop: "1px solid #e0e0e0" }} />
-      <h2>Cursos Cadastrados</h2>
-      <div className="lista-cursos">
-        {cursos.length > 0 ? (
-          cursos.map((c) => (
-            <div key={c.id} className="curso-item">
-              <div>
-                <h3>{c.title}</h3>
-                <p>{c.description}</p>
-                <span>
-                  <strong>Nível:</strong> {c.level} | <strong>R$</strong>{" "}
-                  {Number(c.price).toFixed(2)}
-                </span>
+          <label htmlFor="category">Categoria</label>
+          <select
+            id="category"
+            name="category"
+            value={curso.category}
+            onChange={handleChange}
+          >
+            <option value="">Selecione a categoria</option>
+            <option value="lp">Linguagens de Programação</option>
+            <option value="bd">Banco de Dados</option>
+            <option value="web">Programação Web</option>
+            <option value="info">Informática</option>
+          </select>
+
+          <button type="submit" disabled={enviando}>
+            {enviando ? "Cadastrando..." : "Cadastrar Curso"}
+          </button>
+        </form>
+
+        <br />
+
+        <hr style={{ borderTop: "1px solid #e0e0e0" }} />
+
+        <h2>Cursos Cadastrados</h2>
+
+        <div className="lista-cursos">
+          {cursos.length > 0 ? (
+            cursos.map((c) => (
+              <div key={c.id} className="curso-item">
+                <div>
+                  <h3>{c.title}</h3>
+                  <p>{c.description}</p>
+                  <span>
+                    <strong>Nível:</strong> {c.level} |{" "}
+                    <strong>Duração:</strong> {c.duration}h
+                  </span>
+                  <br />
+                  <strong>Categoria:</strong> {c.category?.toUpperCase()}
+                </div>
+                <button
+                  className="btn-excluir"
+                  onClick={() => handleDelete(c.id)}
+                >
+                  Excluir
+                </button>
               </div>
-              <button
-                className="btn-excluir"
-                onClick={() => handleDelete(c.id)}
-              >
-                Excluir
-              </button>
-            </div>
-          ))
-        ) : (
-          <p>Nenhum curso cadastrado ainda.</p>
-        )}
+            ))
+          ) : (
+            <p>Nenhum curso cadastrado ainda.</p>
+          )}
+        </div>
       </div>
-    </div>
     </div>
   );
 }
