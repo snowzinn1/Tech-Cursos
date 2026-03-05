@@ -125,7 +125,7 @@ Este projeto foi desenvolvido com o objetivo de:
 
 * [Guilherme Israel](https://github.com/Guilherme3578)
 * [Gustavo Bordinasso](https://github.com/gbordinasso)
-* [Gabriel Groppo](https://github.com/gabrielgroppo123).
+* [Gabriel Groppo](https://github.com/gabrielgroppo123)
 * [Guilherme Alves de Souza](https://github.com/snowzinn1)
 
 
